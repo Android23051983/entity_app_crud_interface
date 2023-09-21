@@ -47,30 +47,29 @@ namespace entity_app_crud_interface
             };
             if (allParametersRB.IsChecked == true) 
             {
-                AddHeroDB.AddAll(hero);
-                db.Heroes.Load();
-                DataContext = db.Heroes.Local.ToObservableCollection();
+                HeroMethodsManagement.AddAll(hero);
             }
             else if(NameRB.IsChecked == true)
             {
-                AddHeroDB.AddName(hero);
-                db.Heroes.Load();
-                DataContext = db.Heroes.Local.ToObservableCollection();
+                HeroMethodsManagement.AddName(hero);
             }
             else if(allParametersRB.IsChecked == false && NameRB.IsChecked == false )
             {
                 MessageBox.Show("Выберите пожалуйста будете ли вы добавлять (удалять) по имени или по вем параметрам. Так же введите свои данные вместо уже введённых!!!");
             }
+            
         }
 
         private void delBtn_Click(object sender, RoutedEventArgs e)
         {
-            Hero? hero = heroesList.SelectedItem as Hero;
-            //if (hero is null) { return; }
-
-            db.Heroes.Remove(hero);
-            db.SaveChanges();
-            heroesList.Items.Refresh();
+            Hero hero = new Hero
+            {
+                Name = nameTextBox.Text,
+                Race = raceTextBox.Text,
+                Age = Convert.ToInt32(ageTextBox.Text),
+                Weapon = weaponTextBox.Text
+            };
+            HeroMethodsManagement.Del(hero);
         }
 
         private void editBtn_Click(object sender, RoutedEventArgs e)

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:entity_app_crud_interface"
         mc:Ignorable="d"
         Title="Lord of the Rings App" Height="450" Width="800" ResizeMode="NoResize">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.6*"/>
@@ -19,7 +20,7 @@
         <ListBox x:Name="heroesList" ItemsSource="{Binding}" Margin="10" SelectionChanged="heroesList_SelectionChanged" >
             <ListBox.ItemTemplate>
                     <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="0,0,0,2" Width="440" Padding="0,0,0,10">
+                    <Border BorderBrush="Black" BorderThickness="0,0,0,2" Width="430" Padding="0,0,0,10">
                         <StackPanel Width="393">
                             <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}"/>
                             <TextBlock FontSize="13" Text="{Binding Race}"/>
@@ -40,14 +41,14 @@
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
-            <TextBlock Text="Name: " Margin="10"/>
-            <TextBox x:Name="nameTextBox" Margin="10"/>
-            <TextBlock Text="Race: " Margin="10"/>
-            <TextBox x:Name="raceTextBox" Margin="10"/>
-            <TextBlock Text="Age: " Margin="10"/>
-            <TextBox x:Name="ageTextBox" Margin="10"/>
-            <TextBlock Text="Weapon: " Margin="10"/>
-            <TextBox x:Name="weaponTextBox" Margin="10"/>
+            <TextBlock Text="Name: " Margin="10,3,0,0" FontSize="14" FontWeight="Bold"/>
+            <TextBox x:Name="nameTextBox" Margin="10,0,0,0" FontSize="12"/>
+            <TextBlock Text="Race: " Margin="10,3,0,0" FontSize="14" FontWeight="Bold"/>
+            <TextBox x:Name="raceTextBox" Margin="10,0,0,0" FontSize="12"/>
+            <TextBlock Text="Age: " Margin="10,3,0,0" FontSize="14" FontWeight="Bold"/>
+            <TextBox x:Name="ageTextBox" Margin="10,0,0,0" FontSize="12"/>
+            <TextBlock Text="Weapon: " Margin="10,3,0,0" FontSize="14" FontWeight="Bold"/>
+            <TextBox x:Name="weaponTextBox" Margin="10,0,0,0" FontSize="12"/>
         </StackPanel>
 
         <Button Grid.Row="1" Grid.Column="1" Content="Изменить" Margin="90,5,90,45" Padding="20,0,20,0" Click="editBtn_Click"/>
